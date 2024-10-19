@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+basics/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Virtual Environment
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Data files
+*.csv
+*.h5
+*.hdf5
+*.npz
+*.pkl
+
+# Logs
+*.log
+
+# IDE files
+*.idea/
+*.vscode/
+
+# Miscellaneous
+*.DS_Store
+*.swp
+*.swo
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.egg-info/
+*.egg
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Model files
+model.h5
+model.pkl
