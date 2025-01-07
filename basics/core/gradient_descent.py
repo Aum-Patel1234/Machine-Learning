@@ -10,7 +10,7 @@ class GradientDescent():
 
     def __init__(self,filePath):
         self.data = pd.read_excel(filePath)
-        print(self.data)
+        # print(self.data)
 
 
     def gradientDescent(self,x,y,learning_rate = 0.01,iterations=3000):
@@ -51,8 +51,8 @@ class GradientDescent():
     
     
     def stochasticGradientDescent(self,x,y,learning_rate=0.01,iterations=1000):
-        self.X = self.data[x]
-        self.Y = self.data[y]
+        self.X : pd.DataFrame = self.data[x] 
+        self.Y : pd.DataFrame = self.data[y]
 
         n = self.X.size
         slope = 0
@@ -91,29 +91,55 @@ class GradientDescent():
         self.Y = self.data[y]
     
 
-    def normalEquation(self,x,y):
+    def normalEquation(self,x,y):           # wrong code 
         X = self.data[x]
         Y = self.data[y]
-        print(X,Y)
-
+        # print(X,Y)
         return np.linalg.inv(X.T @ X) @ X.T @ Y
     
     def ne(self, x, y):
-        X = self.data[x].values.reshape(-1, 1)  # Reshape X into a 2D array (n_samples, 1)
+        X = self.data[x].values.reshape(-1, 1)  
+        # .reshape(-1, 1): Reshapes the array to ensure it is a 2D column vector of shape (n_samples, 1), where:
+        # -1 lets NumPy calculate the number of rows automatically.
+        # 1 specifies one column.
         Y = self.data[y].values                # Extract Y as a 1D array
+        # print(X.shape)
+        print(self.data[x].values.shape,X.shape,Y.shape)      # ->   (30,) (30, 1) (30,)
         
         # Add a column of ones to X for the intercept term
         X = np.hstack([np.ones((X.shape[0], 1)), X])
+        # print(X.shape,X,((np.linalg.inv(X.T @ X)).shape),(np.linalg.inv(X.T @ X) @ X.T ).shape,Y.shape)
 
-        # Normal Equation: theta = (X.T X)^-1 X.T Y
-        return np.linalg.inv(X.T @ X) @ X.T @ Y
+
+        return (np.linalg.inv(X.T @ X) @ X.T @ Y)    # -> (2,30)*(30,2) -> (2,2) -> (2,2)*(2,30) -> (2,30) -> (2,30)*(30,) -> (2,1) 
 
 
     
 if __name__ == "__main__":
-    gd = GradientDescent('basics/data/years_experience_salary.xlsx')
-    # gd.gradientDescent(x='YearExperience',y='Salary')
-    gd.stochasticGradientDescent(x='YearExperience',y='Salary')
-    print(gd.ne(x='YearExperience',y='Salary'))
-    
-    pass
+    gd = GradientDescent('./data/years_experience_salary.xlsx')
+
+    # Batch Gradient Descent
+    # Time Complexity: O(n * m * i) 
+    #   - n = number of training samples
+    #   - m = number of features
+    #   - i = number of iterations
+    # Space Complexity: O(m) (for storing weights/parameters)
+    gd.gradientDescent(x='YearExperience', y='Salary')
+
+    # Stochastic Gradient Descent (SGD)
+    # Time Complexity: O(n * m) 
+    #   - n = number of training samples
+    #   - m = number of features
+    # Space Complexity: O(m) (for storing weights/parameters)
+    # Note: Faster convergence than Batch Gradient Descent for large datasets.
+    gd.stochasticGradientDescent(x='YearExperience', y='Salary')
+
+    print()
+
+    # Normal Equation (Closed-form Solution)
+    # Time Complexity: O(m^3) 
+    #   - m = number of features
+    # Space Complexity: O(m^2) 
+    #   - Due to the matrix inversion step
+    print(gd.ne(x='YearExperience', y='Salary'), end='\n\n')
+    # print(gd.normalEquation(x='YearExperience', y='Salary'))

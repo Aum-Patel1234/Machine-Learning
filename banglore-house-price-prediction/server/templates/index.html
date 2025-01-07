@@ -3,72 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banglore House Price Predictor</title>
+    <title>Bangalore House Price Predictor</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', Arial, sans-serif;
+        background: linear-gradient(135deg, #89f7fe, #66a6ff);
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #444;
       }
+
       .container {
-        max-width: 600px;
-        margin: 50px auto;
+        max-width: 500px;
         background: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         text-align: center;
-        color: #333;
       }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #007bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
       label {
-        font-weight: bold;
-        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 600;
         display: block;
+        margin: 15px 0 5px;
+        text-align: left;
       }
-      
+
       input,
       select,
       button {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
         margin-top: 5px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        border: none;
+        border-radius: 8px;
         font-size: 16px;
       }
-     
+
+      input,
+      select {
+        background: #f7f7f7;
+        border: 1px solid #ddd;
+      }
+
+      input:focus,
+      select:focus {
+        border: 1px solid #007bff;
+        outline: none;
+      }
+
       button {
-        background-color: #007bff;
-        color: white;
-        border: none;
+        background: #007bff;
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
         cursor: pointer;
+        margin-top: 20px;
+        transition: all 0.3s ease;
       }
+
       button:hover {
-        background-color: #0056b3;
+        background: #0056b3;
+        transform: translateY(-2px);
       }
+
       .result {
         margin-top: 20px;
-        padding: 10px;
-        background-color: #e9ecef;
-        border-radius: 5px;
+        padding: 15px;
+        background: #f1f1f1;
+        border-radius: 8px;
+        color: #007bff;
+        font-weight: bold;
         font-size: 18px;
-        color: #333;
-        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+
+        button {
+          font-size: 14px;
+          padding: 10px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Banglore House Price Predictor</h1>
-      <form id="predictForm"  method="POST">
+      <h1>Bangalore House Price Predictor</h1>
+      <form id="predictForm" method="POST">
         <label for="sqft">Enter Square Foot</label>
         <input
           type="number"
@@ -113,4 +160,4 @@
 
     <script src="static/script.js"></script>
   </body>
-</html>
+</html> 
