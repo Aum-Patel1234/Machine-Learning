@@ -74,4 +74,4 @@ if __name__ == "__main__":
     # print(predict_price('thubarahalli',1000,2,2))
     # print(predict_price('thubarahalli',1200,2,2))
     # print(predict_price('vidyaranyapura',1200,2,2))
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=8080)

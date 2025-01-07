@@ -1,4 +1,5 @@
-fetch("http://127.0.0.1:8000/get_locations", {
+const port = '8080';
+fetch(`http://127.0.0.1:${port}/get_locations`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -31,7 +32,7 @@ document.querySelector("#predictForm").addEventListener('submit', async (event) 
   const bhk = document.querySelector('#bhk').value;
   const bath = document.querySelector('#bath').value;
 
-  const url = 'http://127.0.0.1:8000/predict_price';
+  const url = `http://127.0.0.1:${port}/predict_price`;
 
   const formData = new FormData();
   formData.append('location', location);
