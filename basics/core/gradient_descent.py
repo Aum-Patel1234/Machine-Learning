@@ -65,8 +65,7 @@ class GradientDescent():
             x_i = self.X.iloc[random_index]
 
             y_predicted = x_i * slope + intercept                          
-            # print(y_predicted)                                      
-
+            # print(y_predicted)
             
             slope_gradient = -2 * x_i * (y_i - y_predicted)
             intercept_gradient = -2 * (y_i - y_predicted)
@@ -82,9 +81,11 @@ class GradientDescent():
 
         print(sgd.tail())
         plt.scatter(sgd['slope'],sgd['intercept'])
-        
-        
-        
+
+
+    def stochasticGradientDescentMultipleVariables():
+        pass        
+                
     
     def miniBatchGradientDescent(self,x,y,batch=5):
         self.X = self.data[x]
