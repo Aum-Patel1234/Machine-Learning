@@ -21,6 +21,37 @@ venv.bak/
 */postcss.config.js
 */dist/
 
+# Imgs and Media files
+*/media/*
+*/imgs/
+*/imgages/
+*/icons/
+
+# Ignore SQLite database files
+*.sqlite
+*.sqlite3
+db.sqlite
+db.sqlite3
+
+# Ignore MySQL-related files
+*.sql
+*.sql.gz
+*.sql.zip
+*.sql.tar
+*.sql.tar.gz
+
+# Ignore database backup files
+*.db
+*.db-journal
+*.dump
+*.bak
+
+# General ignore patterns
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
 # Data files
 *.csv
 *.h5
