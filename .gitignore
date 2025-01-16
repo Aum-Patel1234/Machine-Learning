@@ -30,8 +30,8 @@ venv.bak/
 # Ignore SQLite database files
 *.sqlite
 *.sqlite3
-db.sqlite
-db.sqlite3
+*/db.sqlite
+*/db.sqlite3
 
 # Ignore MySQL-related files
 *.sql

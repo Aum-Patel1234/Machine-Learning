@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Form{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{musician}}
+    <div class="flex justify-center h-full">
+        <button type="submit" class="border-2 bg-red-400 px-4 py-2 rounded-lg">Submit</button>
+    </div>
+</form>
+{% endblock %}

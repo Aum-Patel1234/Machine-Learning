@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('',views.newFunc, name='new_app'),        
-    path('<int:id>/',views.getObj, name='newApp_item'),        
+    path('musician/',views.getObj, name='newApp_item'),        
+    path('form/',views.form, name='form'),        
 ]
