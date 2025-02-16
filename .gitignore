@@ -16,6 +16,7 @@ env.bak/
 venv.bak/
 
 # Data files
+data/
 *.csv
 *.h5
 *.hdf5
