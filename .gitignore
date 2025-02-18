@@ -17,6 +17,10 @@ venv.bak/
 
 # Data files
 data/
+*/data/
+*.xlsx
+*.xls
+*.tsv
 *.csv
 *.h5
 *.hdf5
