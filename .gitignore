@@ -54,3 +54,6 @@ data/
 # Model files
 model.h5
 model.pkl
+rsconnect/
+*.RData
+*.RHistory
