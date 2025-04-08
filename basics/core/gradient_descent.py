@@ -4,9 +4,9 @@ import openpyxl as op
 import matplotlib.pyplot as plt
 
 class GradientDescent():
-    data:pd.DataFrame = None
-    X:pd.Series = None
-    Y:pd.Series = None
+    data:pd.DataFrame | None = None
+    X:pd.Series | None = None
+    Y:pd.Series | None = None
 
     def __init__(self,filePath):
         self.data = pd.read_excel(filePath)
