@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Run Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Cricket Runs</h1>
+        <form action="/predict" method="post" class="form-grid">
+            <div class="form-column">
+                <div class="form-field">
+                    <label for="Matches">Matches:</label>
+                    <input type="number" id="Matches" name="Matches" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="Innings">Innings:</label>
+                    <input type="number" id="Innings" name="Innings" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="NotOuts">Not Outs:</label>
+                    <input type="number" id="NotOuts" name="NotOuts" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="HighestScore">Highest Score:</label>
+                    <input type="number" id="HighestScore" name="HighestScore" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="Average">Average:</label>
+                    <input type="number" id="Average" name="Average" required step="any">
+                </div>
+            </div>
+
+            <div class="form-column">
+                <div class="form-field">
+                    <label for="StrikeRate">Strike Rate:</label>
+                    <input type="number" id="StrikeRate" name="StrikeRate" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="Centuries">Centuries:</label>
+                    <input type="number" id="Centuries" name="Centuries" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="HalfCenturies">Half Centuries:</label>
+                    <input type="number" id="HalfCenturies" name="HalfCenturies" required step="any">
+                </div>
+                <div class="form-field">
+                    <label for="ScorelessInnings">Scoreless Innings:</label>
+                    <input type="number" id="ScorelessInnings" name="ScorelessInnings" required step="any">
+                </div>
+            </div>
+
+            <div class="form-button">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            <h2>Predicted Runs: {{ prediction }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

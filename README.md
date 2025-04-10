@@ -34,3 +34,5 @@ To get started with any of the projects, follow these steps:
 1. Clone the repository to your local machine using:
    ```bash
    git clone <repository-url>
+
+<a href="https://www.flaticon.com/free-icons/cricket-bat" title="cricket bat icons">Cricket bat icons created by Smashicons - Flaticon</a>
