@@ -53,7 +53,7 @@ class CustomLogisticRegression:
             # print(h)
             # Step 2 : calculate cost Function
             # 📉 Binary Cross Entropy (Log Loss) Cost Function:
-            # J(θ) = -1/m * Σ [ yᵢ * log(ŷᵢ) + (1 - yᵢ) * log(1 - ŷᵢ) ]
+            # FORMULA: J(θ) = -1/m * Σ [ yᵢ * log(ŷᵢ) + (1 - yᵢ) * log(1 - ŷᵢ) ]
             # where:
             #   - ŷᵢ = sigmoid(θᵗxᵢ)
             #   - yᵢ is the true label (0 or 1)
@@ -68,7 +68,7 @@ class CustomLogisticRegression:
 
             # Step 3 : Compute Gradiesnts
             # 🔁 Gradient of the Cost Function (for Logistic Regression):
-            # ∇J(θ) = (1/m) * Xᵗ · (sigmoid(X · θ) - y)
+            # FORMULA: ∇J(θ) = (1/m) * Xᵗ · (sigmoid(X · θ) - y)
             # where:
             #   - X is the (m × n) input matrix with bias column (1s) here i have considered bias as 1
             #   - θ is the (n × 1) parameter vector (including bias)
@@ -89,7 +89,7 @@ class CustomLogisticRegression:
 
             # Step 4 : Update Coefficients
             # Parameter Update Formula (Gradient Descent):
-            # θ := θ - α * ∇J(θ)
+            # NOTE: θ := θ - α * ∇J(θ)
             #
             # Where:
             # θ       → vector of parameters (including bias)
@@ -97,7 +97,7 @@ class CustomLogisticRegression:
             # ∇J(θ)   → gradient of the cost function w.r.t θ
             #
             # For logistic regression:
-            # ∇J(θ) = (1/m) * Σ (h(xᵢ) - yᵢ) * xᵢ
+            # FORMULA:∇J(θ) = (1/m) * Σ (h(xᵢ) - yᵢ) * xᵢ
             self.coef = updateCoef(self.coef, self.alpha, gradient)
 
             print(f"Iteration {_}: Cost = {cost:.4f}, Mean h = {np.mean(h):.4f}")
