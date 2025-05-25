@@ -1,0 +1,3 @@
+[submodule "basics/core"]
+	path = basics/core
+	url = https://github.com/Aum-Patel1234/mlcore-cpp-python.git
