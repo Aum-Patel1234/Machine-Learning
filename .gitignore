@@ -17,6 +17,8 @@ venv.bak/
 
 # Data files
 data/
+# catboost
+catboost_info/
 */data/
 *.xlsx
 *.xls
